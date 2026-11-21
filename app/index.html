@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Golden Hour — Cover Studio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">★</span>
+    <div>
+      <h1 class="brand-title">GOLDEN HOUR</h1>
+      <p class="brand-sub">COVER STUDIO · LEONIDA</p>
+    </div>
+  </div>
+  <div class="top-actions">
+    <button id="btn-autofill" class="btn" type="button">Auto-fill</button>
+    <button id="btn-reset" class="btn btn-ghost" type="button">Reset</button>
+    <div class="export-menu">
+      <button id="btn-export" class="btn btn-gold" type="button">Export PNG ▾</button>
+      <div class="export-list" id="export-list" hidden>
+        <button data-size="1:1" type="button">Square 1:1 · 2048×2048</button>
+        <button data-size="4:5" type="button">Portrait 4:5 · 2048×2560</button>
+        <button data-size="16:9" type="button">Wide 16:9 · 2560×1440</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="workspace">
+  <section class="stage">
+    <div class="cover-frame" id="cover-frame">
+      <div class="cover" id="cover">
+        <div class="cover-grid" id="cover-grid"></div>
+        <div class="cover-tint" id="cover-tint"></div>
+        <h2 class="cover-title" id="cover-title" data-edit="title">GOLDEN HOUR</h2>
+        <div class="callout-layer" id="callout-layer"></div>
+        <div class="wanted-badge" id="wanted-badge">
+          <span class="wanted-word">WANTED</span>
+          <span class="wanted-sub">DEAD OR ALIVE</span>
+        </div>
+        <svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <path id="seal-path" d="M 60,60 m -44,0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0"></path>
+          </defs>
+          <circle cx="60" cy="60" r="56" class="seal-ring"></circle>
+          <circle cx="60" cy="60" r="34" class="seal-ring"></circle>
+          <text class="seal-text"><textPath href="#seal-path">LEONIDA • EST. 2026 • GOLDEN HOUR • </textPath></text>
+          <text x="60" y="72" class="seal-star">★</text>
+        </svg>
+      </div>
+      <div class="quote-bar" id="quote-bar">
+        <span class="quote-text" id="quote-text" data-edit="quote">“EVERY CITY HAS A PRICE.”</span>
+        <span class="quote-by" id="quote-by" data-edit="quoteBy">— LEONIDA TIMES</span>
+      </div>
+      <p class="billing" id="billing">A LEONIDA PICTURES PRODUCTION · STARRING THE DRIVER · THE FIXER · THE QUEEN · THE RIDER<br>DIRECTED BY GOLDEN HOUR STUDIO · MUSIC BY VICE FM · © 2026 LEONIDA PICTURES</p>
+    </div>
+
+    <div class="photo-strip" id="photo-strip" aria-label="Photos">
+      <label class="upload-tile" id="upload-tile" title="Upload your own photos (up to 10)">
+        <input type="file" id="file-input" accept="image/*" multiple hidden>
+        <span class="upload-plus">＋</span>
+        <span class="upload-label">Upload photos</span>
+        <span class="upload-hint">drag &amp; drop or click</span>
+      </label>
+    </div>
+    <p class="strip-hint">Click a panel to edit it — drag the photo to reposition, use the zoom slider, then pick a photo below to swap it in. Click any text to edit it.</p>
+  </section>
+
+  <aside class="panel-controls">
+    <section class="control-group">
+      <h3>Layout</h3>
+      <div class="layout-grid" id="layout-grid"></div>
+    </section>
+
+    <section class="control-group">
+      <h3>Grade</h3>
+      <div class="grade-grid" id="grade-grid"></div>
+    </section>
+
+    <section class="control-group" id="editor-group">
+      <h3>Panel editor <span class="editor-which" id="editor-which">Hero</span></h3>
+      <label class="slider-row">Zoom
+        <input type="range" id="zoom-slider" min="100" max="200" value="100">
+        <span id="zoom-value">100%</span>
+      </label>
+      <div class="editor-row">
+        <button id="btn-crop-reset" class="btn btn-small" type="button">Reset crop</button>
+        <button id="btn-tag-toggle" class="btn btn-small" type="button">Hide tag</button>
+      </div>
+      <p class="editor-note">Drag the photo inside the selected panel to move it. Double-click a panel to re-centre on the face.</p>
+    </section>
+
+    <section class="control-group">
+      <h3>Title &amp; extras</h3>
+      <label class="toggle-row"><input type="checkbox" id="toggle-title-over" checked> Title over the art</label>
+      <label class="toggle-row"><input type="checkbox" id="toggle-fullbleed"> Full-bleed (no frame)</label>
+      <label class="toggle-row"><input type="checkbox" id="toggle-wanted" checked> WANTED badge</label>
+    </section>
+  </aside>
+</main>
+
+<footer class="footnote">
+  Golden Hour — Cover Studio · All processing happens in your browser. Sample photos: 4 AI-generated portraits + 6 CC-BY / public-domain photos via Openverse (see CREDITS.md).
+</footer>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
